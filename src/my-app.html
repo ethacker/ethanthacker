@@ -18,10 +18,8 @@
       :host {
         --app-primary-color: #4285f4;
         --app-secondary-color: black;
-
         display: block;
       }
-
       app-header {
         color: #fff;
         background-color: var(--app-primary-color);
@@ -36,19 +34,14 @@
 
       .drawer-list a {
         display: block;
-
         padding: 0 16px;
-
         text-decoration: none;
-
         color: var(--app-secondary-color);
-
         line-height: 40px;
       }
 
       .drawer-list a.iron-selected {
         color: black;
-
         font-weight: bold;
       }
     </style>
@@ -58,18 +51,18 @@
         route="{{route}}"
         pattern="/:page"
         data="{{routeData}}"
-        tail="{{subroute}}"></app-route>
+        tail="{{subroute}}">
+    </app-route>
 
     <app-drawer-layout fullbleed>
       <!-- Drawer content -->
       <app-drawer>
         <app-toolbar>navigation</app-toolbar>
         <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
-          <a name="about-et" href="/about-et">about</a>
-          <a name="projects" href="/view2">projects</a>
-          <a name="blog" href="/view3">blog</a>
-          <a name="my-new-view" href="/my-new-view">New View</a>
-          <a name="social-media" href="/social-media">social media</a>
+          <a name="about-et" href="/about">about</a>
+          <a name="projects-et" href="/projects">projects</a>
+          <a name="blog-et" href="/blog">blog</a>
+          <a name="social-media-et" href="/social-media">social media</a>
         </iron-selector>
       </app-drawer>
 
@@ -88,10 +81,9 @@
             fallback-selection="view404"
             role="main">
           <about-et name="about-et"></about-et>
-          <my-view2 name="view2"></my-view2>
-          <my-view3 name="view3"></my-view3>
-          <my-new-view name="my-new-view"></my-new-view>
-          <social-media name="social-media"></social-media>
+          <projects-et name="projects-et"></projects-et>
+          <blog-et name="blog-et"></blog-et>
+          <social-media-et name="social-media-et"></social-media-et>
           <my-view404 name="view404"></my-view404>
         </iron-pages>
       </app-header-layout>
@@ -115,12 +107,12 @@
       ],
 
       _routePageChanged: function(page) {
-        this.page = page || 'about-et';
+        this.page = page || 'about';
       },
 
       _pageChanged: function(page) {
         // Load page import on demand. Show 404 page if fails
-        var resolvedPageUrl = this.resolveUrl(page + '.html');
+        var resolvedPageUrl = this.resolveUrl(page + "-et" + '.html');
         this.importHref(resolvedPageUrl, null, this._showPage404, true);
       },
 

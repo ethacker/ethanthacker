@@ -3,11 +3,10 @@
   "shell": "src/my-app.html",
   "fragments": [
     "src/about-et.html",
-    "src/view2.html",
-    "src/view3.html",
+    "src/blog-et.html",
+    "src/projects-et.html",
     "src/view404.html",
-    "src/my-new-view.html",
-    "src/social-media.html"
+    "src/social-media-et.html"
   ],
   "sourceGlobs": [
    "src/**/*",
