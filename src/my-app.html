@@ -59,10 +59,10 @@
       <app-drawer>
         <app-toolbar>navigation</app-toolbar>
         <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
-          <a name="about-et" href="/about">about</a>
-          <a name="projects-et" href="/projects">projects</a>
-          <a name="blog-et" href="/blog">blog</a>
-          <a name="social-media-et" href="/social-media">social media</a>
+          <a name="about-et" href="/about-et">about</a>
+          <a name="projects-et" href="/projects-et">projects</a>
+          <a name="blog-et" href="/blog-et">blog</a>
+          <a name="social-media-et" href="/social-media-et">social media</a>
         </iron-selector>
       </app-drawer>
 
@@ -107,12 +107,12 @@
       ],
 
       _routePageChanged: function(page) {
-        this.page = page || 'about';
+        this.page = page || 'about-et';
       },
 
       _pageChanged: function(page) {
         // Load page import on demand. Show 404 page if fails
-        var resolvedPageUrl = this.resolveUrl(page + "-et" + '.html');
+        var resolvedPageUrl = this.resolveUrl(page + '.html');
         this.importHref(resolvedPageUrl, null, this._showPage404, true);
       },
 
